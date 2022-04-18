@@ -10,8 +10,17 @@ html {
 
 .main {
     padding: 2rem;
+    border: 1rem;
 }
 
-h1 {
-    color: $red;  
+
+.profile{
+  width: 100%;
+  border: 2rem solid $darkgray;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
