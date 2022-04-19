@@ -9,9 +9,7 @@
 @mixin respond-to($breakpoint) {
 @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
   @content;
-}
-}
- 
+}}
 
 //Style left portion of card with 3 breakpoint styles
   .left {

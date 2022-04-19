@@ -9,23 +9,25 @@ fetch('./data/data.json')
           //address JSON data here
           .then(function (data) {
               appendData(data);
-
           })
           //catch error if fail to load
           .catch(function (err) {
               console.log('error: ' + err);
           });
-
+//insert JSON data, pass to cards
 function appendData(data) {
 const cards = data;
-const container = document.querySelector('#template-hook')
-let cardList = cards.forEach(function(el){
-  // Loop through all elements of the list
+//hook to body of HTML
+const container = document.querySelector('#template-hook');
 
+  // Loop through all elements of the list
+ let cardList = cards.map(function(el) {
 
     // Build HTML code
-    let list = document.createElement('div')
-    list.innerHTML = `
+  let list = document.createElement('div');
+//create template literal card
+    list.innerHTML =
+   `
     <div class="profile">
       <div class="left">
         <div class="left1">
@@ -55,8 +57,8 @@ let cardList = cards.forEach(function(el){
     </div>
     </div>
   </div>
-    `
+    `;
     // Insert HTML into page
-    container.append(list)
-  })
-};
+    container.append(list);
+});
+}
