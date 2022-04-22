@@ -9,5 +9,14 @@ html {
 }
 
 .main {
-    padding: 2rem;
+  }
+
+
+//define container layout
+.container {
+  display: grid;
+  grid-template-columns: 0.4fr 0.3fr 0.3fr;
+//   grid-template-rows:
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
 }
