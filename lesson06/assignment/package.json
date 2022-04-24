@@ -16,5 +16,7 @@
         "gulp-plumber": "^1.2.1",
         "gulp-sass": "^4.1.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "bootstrap": "^5.1.3"
+    }
 }
