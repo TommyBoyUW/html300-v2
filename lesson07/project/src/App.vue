@@ -13,7 +13,6 @@
 
 
     <div>
-
         <h2 class="mt-3">Speech joke of the day</h2>
         <div v-if="myToggle === false">
           What’s orange and sounds like a parrot?
@@ -22,13 +21,11 @@
           A carrot!
           </div><br>
           <b-button :pressed.sync="myToggle" variant="primary">Answer</b-button>
-<hr class="my-4">
       </div>
     </nav>
-
     <router-view/>
 
-
+<hr class="my-4">
 
 
   </div>
