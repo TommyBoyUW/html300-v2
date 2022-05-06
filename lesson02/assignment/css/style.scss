@@ -1,6 +1,124 @@
 // Import partials here
 @import 'base.normalize';
 @import 'settings.variables';
-@import 'settings.responsive';
+//@import 'settings.responsive';
 @import 'components.content';
 
+
+// Declare breakpoint mixin
+@mixin respond-to($breakpoint) {
+@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+  @content;
+}
+}
+
+
+//Style left portion of card with 3 breakpoint styles
+  .left {
+    //configure left side breakpoint for small screens
+      @include respond-to(sm) {
+        width: 80%;
+        padding: 5% 0% 5% 0%;
+        color: $darkergray;
+        background-color: white;
+  //nest photo/name/job title styles
+          .photo {
+          width: 100%;
+          border-radius: 50%;
+           }
+          .name {
+           font: bold 2.3em $fonts;
+           padding: 0 0 0 10%;
+           }
+          .jobtitle{
+           font: italic lighter 1.5em $fonts;
+           padding: 0 0 0 12%;
+               }
+    }
+    //configure left side breakpoint for medium screens
+    @include respond-to(md) {
+      width: 25%;
+      align-content: center;
+      padding: 1% 0% 1% 0%;
+      color: $darkergray;
+      background-color: white;
+      .photo {
+      width: 100%;
+      border-radius: 50%;
+    }
+      //nest photo/name/job title styles
+      .name {
+        font: bold 1.5em $fonts;
+           }
+      .jobtitle{
+        font: italic lighter 1.0em $fonts;
+               }
+     }
+    //configure left side breakpoint for large screens
+    @include respond-to(lg) {
+      width: 25%;
+      align-content: center;
+      padding: 5% 0% 5% 0%;
+      color: $darkergray;
+      background-color: white;
+      .photo {
+      width: 100%;
+      border-radius: 50%;
+    }
+      //nest photo/name/job title styles
+      .name{
+        font: bold 2.5em $fonts;
+           }
+      .jobtitle{
+        font: italic lighter 2em $fonts;
+               }
+    }
+}
+
+//Set right portion of card with 3 breakpoint styles
+  .right {
+      //configure right side breakpoint for small screens
+    @include respond-to(sm) {
+      width: 90%;
+      margin: 2.5%;
+      padding: 2.5% 0% 5% 5%;
+      font-size: 1em;
+      color: $darkergray;
+      background: $gray;
+        //nest the linkedin style
+        .linkedin {
+        display: inline-block;
+        vertical-align: middle;
+      }
+  }
+
+    //configure right side breakpoint for medium screens
+    @include respond-to(md) {
+    font-size: 1.0em;
+    width: 60%;
+    margin: 2.5%;
+    padding: 2.5% 0% 5% 5%;
+    color: $darkergray;
+    background: $gray;
+      //nest the linkedin style
+      .linkedin {
+      display: inline-block;
+      vertical-align: middle;
+    }
+}
+
+    //configure right side breakpoint for large screens
+    @include respond-to(lg) {
+      width: 60%;
+      margin: 2.5%;
+      padding: 2.5% 0% 5% 5%;
+      font-size: 2.3em;
+      color: $darkergray;
+      background: $gray;
+      //nest the linkedin style
+        .linkedin {
+        display: inline-block;
+        vertical-align: middle;
+      }
+}
+}

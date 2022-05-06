@@ -2,6 +2,9 @@
 
 @mixin media-query($mq) {
 
+
+
+
     $breakpoint-found: false;
 
     // Loop through the list of breakpoints we’ve provided in our settings file.
@@ -17,13 +20,6 @@
 
             // ...tell the mixin that we’ve found it...
             $breakpoint-found: true;
-
-            // ...and spit it out here.
-            @media #{$condition} {
-                @content;
-            }
-
-        }
 
     }
 
@@ -50,3 +46,5 @@ $breakpoints: (
     "ie"            "all and(-ms-high-contrast: none), (-ms-high-contrast: active)",
     "ipad"          "screen and (min-device-width : 768px) and (max-device-width : 1024px)"
 ) !default;
+
+}

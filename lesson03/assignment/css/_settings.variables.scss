@@ -1,5 +1,7 @@
 // Colors
 $gray: #f6f5f6;
+$darkgray: darken( $gray, 10% );
+$darkergray: darken( $gray, 50%);
 $white: #ffffff;
 $black: #000000;
 $green: #7acb00;
@@ -10,3 +12,11 @@ $yellow: #ffb617;
 $robins: #01c1d6;
 $purple: #6e27c5;
 $blue: #150f96;
+$fonts: Arial, Helvetica, sans-serif;
+
+// Define mixin breakpoints
+$breakpoints: (
+sm: 00px,
+md: 602px,
+lg: 1200px
+);

@@ -1,0 +1,172 @@
+
+
+// Colors
+$background: #cde8e3;
+$lightbg: lighten( $background, 10%);
+$lighttb: lighten( $background, 7%);
+$fontcolor: #616d69;
+$doublelines: #ef7c8e;
+$fontstyle: 'Quicksand';
+$white: #ffffff;
+$black: #000000;
+$green: #7acb00;
+$pink: #ff0097;
+$red: #F1352B;
+$orange: #ff6600;
+$yellow: #ffb617;
+$robins: #01c1d6;
+$purple: #6e27c5;
+$blue: #150f96;
+$fonts: Arial, Helvetica, sans-serif;
+
+
+body {
+  background: $lightbg;
+}
+
+header {
+ background: $background;
+ padding: 2.5% 0% 0% 0;
+}
+
+nav {
+ background: $lighttb;
+ padding: 2.5% 0% 2.5% 0;
+}
+
+p {
+ padding: 0 2.5% 0% 2.5%;
+}
+
+//navigation toolbar settings
+.navclass {
+     color: $fontcolor;
+     font-weight: bold;
+     font-family: $fontstyle;
+     padding: .5rem;
+     margin: 5% ;
+     text-decoration: none;
+}
+
+
+//hover over navigation links with active box
+.navclass:hover {
+  box-shadow: inset 0 0 0 5px #53a7ea;
+  //https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
+}
+
+
+
+// Define mixin breakpoints for screen sizes
+$breakpoints: (
+sm: 01px,
+md: 652px,
+lg: 1200px
+);
+
+// Declare breakpoint mixin
+@mixin respond-to($breakpoint) {
+@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+  @content;
+}}
+
+
+
+//configure breakpoint for small screens
+@include respond-to(sm) {
+
+.headers {
+  background-image: url("/img/1.png");
+          width: 100%;
+         height: 12rem;
+         background-position: center;
+         background-repeat: no-repeat;
+}}
+
+
+
+//configure breakpoint for medium screens
+@include respond-to(md) {
+  .headers{
+  background-image: url("/img/2.png");
+  height: 15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navclass{
+font-size: 1.5rem;
+}}
+
+
+
+//configure breakpoint for large screens
+@include respond-to(lg) {
+  .headers{
+  background-image: url("/img/2.png");
+  height: 17rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navclass{
+font-size: 2rem;
+}}
+
+
+.gifclass {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+.blogphoto {
+object-fit: contain;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+//enlarge pictures in semicircle shape when hover
+// source for effect: https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
+
+  .blogphoto:hover {
+  border-radius:35%;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+   transform: scale(1.5);
+        }
+
+//animate the titles with passing colors
+//source for animation: https://alvarotrigo.com/blog/css-text-animations/
+
+.animate-charcter {
+text-transform: uppercase;
+  background-image: linear-gradient(
+      -25deg,
+      $yellow 0%,
+      $orange 29%,
+      $green 67%,
+      $red 80%,
+      $blue 65%
+  );
+    background-size: auto auto;
+    background-clip: content-box;
+    background-size: 50% auto;
+    color: #faf;
+    background-clip: border-box;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: float;
+        font-size: 3.5rem;
+}
+
+@keyframes textclip {
+   to {
+      background-position: 70% center;
+      }
+}
