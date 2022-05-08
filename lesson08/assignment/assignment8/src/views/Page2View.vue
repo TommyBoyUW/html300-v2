@@ -8,9 +8,8 @@
 <script>
 import ImageList from '../components/ImageList.vue'
 export default {
-name: 'App',
+
 components: {
-ImageList,
-}
-}
+ImageList
+}}
 </script>

@@ -1,5 +1,6 @@
 export default {
     created: function () {
+      console.log('checkout my mixin')
     },
     data() {
       return {
@@ -11,7 +12,9 @@ export default {
         toggleShowHide() {
             this.isHidden = !this.isHidden;
         },
-        myMethod() {
+        toggleMethod() {
             var element = document.getElementById("border");
             element.classList.toggle("frame");
-        }}}
+        }
+    }
+}

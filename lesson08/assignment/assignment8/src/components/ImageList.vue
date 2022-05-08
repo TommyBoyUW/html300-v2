@@ -1,19 +1,21 @@
 <template>
-<div>
+<div >
 
 </b-navbar>
+<div class="container">
+
+<!--Toggle border on image-->
+
+  <div>
+  <b-button @click="toggleMethod()">Toggle Image Border</b-button>
+  </div>
 
 
-<div>
-<button class="btn draw-border" v-on:click="clicked('you just clicked on button 2')">Toggle Border</button>
-</div>
-<hr class="my-4">
-
-  <div class="container">
+  <hr class="my-4">
             <div class="row">
-            <div class="col-md-4" v-for="(lesson, x) in lessons" :key="x">
-               <image-profile :lesson-data="lesson" />
-                    <ImageProfile />
+            <div class="col-md-4" v-for="(lesson, x) in lessonData" :key="x">
+              <image-profile :lesson-data="lesson" />
+                    <ImageProfile/>
                 </div>
             </div>
         </div>
@@ -22,29 +24,32 @@
 </template>
 
 <script>
-import ImageProfile from './ImageProfile.vue'
-import { imageMixin } from '../mixins/imageMixin.js'
+import ImageProfile from './ImageProfile.vue';
+import imageMixin from '../mixins/imageMixin.js';
 
 export default {
-name: 'Images',
+
+mixin: imageMixin,
+
+name: 'ImageList',
 
     components: {
-        ImageProfile
+    ImageProfile
     },
-    data(){
+    data() {
         return {
 
-          lessons: [
+          lessonData: [
                 {
                     'title': 'Speech',
                     'description': 'Speech is how we say sounds and words, wow!',
-                    'picture': require('@/assets/crayon.jpg'),
+                    'picture': require('../assets/crayon.jpg'),
                     'alt': 'Crayon activity for speech'
                 },
                 {
                     'title': 'Language',
                     'description': 'Language refers to the words we use and how we use them to share ideas.',
-                    'picture': require('@/assets/snowman.jpg'),
+                    'picture': require('../assets/snowman.jpg'),
                     'alt': 'Winter activity for language'
                 },
                 {
@@ -89,9 +94,8 @@ name: 'Images',
                     'picture': require('@/assets/spring-vocab.jpg'),
                     'alt': 'Digital Slide activities are also included that are compatible with PowerPoint and Google Slides™.'
                 }
-
             ]
-        }
+       }
     }
 }
 </script>
@@ -109,13 +113,6 @@ button {
   margin-left: 20rem;
   margin-bottom: 1rem;
 }
-.caption {
-  padding: 1rem;
-}
-
-
-
-
 
 
 </style>

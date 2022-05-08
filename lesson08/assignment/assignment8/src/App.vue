@@ -16,10 +16,10 @@ components: {
   ImageList,
   HeaderNav,
   },
+
      data() {
        return {
-      myToggle: false
-       }
+         }
      },
    }
 
